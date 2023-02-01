@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_11" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/resources"/>
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<lib name="Maven: org.slf4j:jcl-over-slf4j:1.6.6" scope="RUNTIME"/>
+	<lib name="Maven: org.slf4j:slf4j-log4j12:1.6.6" scope="RUNTIME"/>
+	<lib name="Maven: log4j:log4j:1.2.15" scope="RUNTIME"/>
+	<lib name="Maven: javax.servlet:servlet-api:2.5" scope="PROVIDED"/>
+	<lib name="Maven: javax.servlet.jsp:jsp-api:2.1" scope="PROVIDED"/>
+	<lib name="Maven: junit:junit:4.7" scope="TEST"/>
+	<levels>
+		<level name="Maven: com.google.guava:guava:31.1-jre" value="project"/>
+		<level name="Maven: com.google.guava:failureaccess:1.0.1" value="project"/>
+		<level name="Maven: com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava" value="project"/>
+		<level name="Maven: com.google.code.findbugs:jsr305:3.0.2" value="project"/>
+		<level name="Maven: org.checkerframework:checker-qual:3.12.0" value="project"/>
+		<level name="Maven: com.google.errorprone:error_prone_annotations:2.11.0" value="project"/>
+		<level name="Maven: com.google.j2objc:j2objc-annotations:1.3" value="project"/>
+		<level name="Maven: org.springframework:spring-context:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-aop:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-beans:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-core:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-jcl:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-expression:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-webmvc:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.springframework:spring-web:5.0.7.RELEASE" value="project"/>
+		<level name="Maven: org.aspectj:aspectjrt:1.6.10" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-api:1.6.6" value="project"/>
+		<level name="Maven: org.slf4j:jcl-over-slf4j:1.6.6" value="project"/>
+		<level name="Maven: org.slf4j:slf4j-log4j12:1.6.6" value="project"/>
+		<level name="Maven: log4j:log4j:1.2.15" value="project"/>
+		<level name="Maven: javax.inject:javax.inject:1" value="project"/>
+		<level name="Maven: javax.servlet:servlet-api:2.5" value="project"/>
+		<level name="Maven: javax.servlet.jsp:jsp-api:2.1" value="project"/>
+		<level name="Maven: javax.servlet:jstl:1.2" value="project"/>
+		<level name="Maven: junit:junit:4.7" value="project"/>
+	</levels>
+</component>
