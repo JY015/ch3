@@ -73,15 +73,16 @@ public class DBConnectionTest2Test{
     public int updateUser(User user) throws Exception{
         Connection conn = ds.getConnection();
 
-        String sql = "update user_info set pwd=?, name=?, email=?, birth=?, sns = ? where id= ?";
+        String sql = "update user_info set pwd=?, name=?, email=?, birth=?, sns = ?, reg_date=? where id= ?";
 
         PreparedStatement pstmt = conn.prepareStatement(sql);
         pstmt.setString(1, user.getPwd());
         pstmt.setString(2, user.getName());
         pstmt.setString(3, user.getEmail());
-        pstmt.setDate(4, user.getBirth());
+        pstmt.setDate(4, new java.sql.Date(user.getBirth().getTime()));
         pstmt.setString(5, user.getSns());
-        pstmt.setString(6, user.getId());
+        pstmt.setTimestamp(6, new java.sql.Timestamp(user.getReg_date().getTime()));
+        pstmt.setString(7, user.getId());
 
 //        int rowCnt = pstmt.executeUpdate();
 //        return rowCnt;
