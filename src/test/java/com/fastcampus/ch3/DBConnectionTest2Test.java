@@ -13,6 +13,7 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 
 import static org.junit.Assert.*;
@@ -136,6 +137,43 @@ public class DBConnectionTest2Test{
         PreparedStatement pstmt = conn.prepareStatement(sql);
 
         pstmt.executeUpdate(); // insert, delete, update
+
+    }
+    @Test
+    public void transactionTest() throws Exception{
+        Connection conn = null;
+        try {
+            deleteAll();
+            conn = ds.getConnection();
+            conn.setAutoCommit(false);
+
+            String sql = " insert into user_info values(?,?,?,?,?,?,now())";
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, "asdf");
+            pstmt.setString(2, "1234");
+            pstmt.setString(3, "aa");
+            pstmt.setString(4, "1234@aa.com");
+            pstmt.setDate(5, new java.sql.Date(new Date().getTime()));
+            pstmt.setString(6, "fb");
+
+            int rowCnt = pstmt.executeUpdate(); // insert, delete, update
+
+            pstmt.setString(1, "asdf2");
+            rowCnt = pstmt.executeUpdate(); // insert, delete, update
+
+            pstmt.setString(1, "asdf3");
+            pstmt.setString(3, "무식");
+            rowCnt = pstmt.executeUpdate(); // insert, delete, update
+
+            conn.commit();
+
+        } catch (Exception e) {
+            conn.rollback();
+            e.printStackTrace();
+        } finally {
+
+        }
 
     }
     // 사용자 정보를 user_info 테이블에 저장하는 메서드
